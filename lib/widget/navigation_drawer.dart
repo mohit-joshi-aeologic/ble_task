@@ -1,20 +1,17 @@
-import 'package:ble_task/main.dart';
 import 'package:ble_task/ui/active_area.dart';
+import 'package:ble_task/ui/beacon_detection.dart';
 import 'package:flutter/material.dart';
-
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
+
   @override
   Widget build(BuildContext context) {
-
-
     return Drawer(
       child: Material(
         color: Color.fromRGBO(50, 75, 205, 1),
         child: ListView(
           children: <Widget>[
-
             Container(
               padding: padding,
               child: Column(
@@ -32,9 +29,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                     icon: Icons.ac_unit,
                     onClicked: () => selectedItem(context, 1),
                   ),
-
-
-
                 ],
               ),
             ),
@@ -43,8 +37,6 @@ class NavigationDrawerWidget extends StatelessWidget {
       ),
     );
   }
-
-
 
   Widget buildMenuItem({
     required String text,
@@ -68,7 +60,7 @@ class NavigationDrawerWidget extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => MyApp(),
+          builder: (context) => BeaconDetection(),
         ));
         break;
       case 1:
